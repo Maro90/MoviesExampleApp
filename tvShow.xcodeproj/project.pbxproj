@@ -18,6 +18,8 @@
 		754DA6601FC45EF3001DD8D8 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754DA65F1FC45EF3001DD8D8 /* Utils.swift */; };
 		754DA6621FC45F74001DD8D8 /* TVShowCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754DA6611FC45F74001DD8D8 /* TVShowCollectionViewCell.swift */; };
 		757A6CCB1FC5F6D000C81930 /* ProgramDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757A6CCA1FC5F6D000C81930 /* ProgramDetailViewController.swift */; };
+		75E7AD4D1FC7247F004A8F01 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E7AD4C1FC7247F004A8F01 /* SearchViewController.swift */; };
+		75E7AD4F1FC72712004A8F01 /* SearchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E7AD4E1FC72712004A8F01 /* SearchCell.swift */; };
 		974BDCFF9D31EADE40682D1B /* Pods_tvShow.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 561264E703D292FE3C2AF29A /* Pods_tvShow.framework */; };
 /* End PBXBuildFile section */
 
@@ -36,6 +38,8 @@
 		754DA65F1FC45EF3001DD8D8 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		754DA6611FC45F74001DD8D8 /* TVShowCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVShowCollectionViewCell.swift; sourceTree = "<group>"; };
 		757A6CCA1FC5F6D000C81930 /* ProgramDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgramDetailViewController.swift; sourceTree = "<group>"; };
+		75E7AD4C1FC7247F004A8F01 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		75E7AD4E1FC72712004A8F01 /* SearchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCell.swift; sourceTree = "<group>"; };
 		8AEB476EB480763885674BCB /* Pods-tvShow.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tvShow.release.xcconfig"; path = "Pods/Target Support Files/Pods-tvShow/Pods-tvShow.release.xcconfig"; sourceTree = "<group>"; };
 		ACFFF10A49DD6CB40A628DE2 /* Pods-tvShow.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tvShow.debug.xcconfig"; path = "Pods/Target Support Files/Pods-tvShow/Pods-tvShow.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -78,6 +82,8 @@
 				754DA6461FC451AE001DD8D8 /* ViewController.swift */,
 				754DA6611FC45F74001DD8D8 /* TVShowCollectionViewCell.swift */,
 				757A6CCA1FC5F6D000C81930 /* ProgramDetailViewController.swift */,
+				75E7AD4C1FC7247F004A8F01 /* SearchViewController.swift */,
+				75E7AD4E1FC72712004A8F01 /* SearchCell.swift */,
 				754DA6481FC451AE001DD8D8 /* Main.storyboard */,
 				754DA64B1FC451AE001DD8D8 /* Assets.xcassets */,
 				754DA64D1FC451AE001DD8D8 /* LaunchScreen.storyboard */,
@@ -260,8 +266,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				754DA6471FC451AE001DD8D8 /* ViewController.swift in Sources */,
+				75E7AD4F1FC72712004A8F01 /* SearchCell.swift in Sources */,
 				754DA65D1FC4553D001DD8D8 /* SearchResponse.swift in Sources */,
 				757A6CCB1FC5F6D000C81930 /* ProgramDetailViewController.swift in Sources */,
+				75E7AD4D1FC7247F004A8F01 /* SearchViewController.swift in Sources */,
 				754DA6451FC451AE001DD8D8 /* AppDelegate.swift in Sources */,
 				754DA65B1FC4551A001DD8D8 /* TVShow.swift in Sources */,
 				754DA6581FC454D0001DD8D8 /* MoviesService.swift in Sources */,

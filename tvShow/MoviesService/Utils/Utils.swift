@@ -55,5 +55,27 @@ extension UIImageView {
 				}
 			})
 		}
-	}	
+	}
+	public func imageURL(_ url:String, placeholder: UIImage? = nil, handler: @escaping (Bool) -> Void)
+	{
+		self.request?.cancel()
+		self.request = nil
+		self.image = placeholder
+		if let cachedImage = ImageCache.sharedInstance.object(forKey: url as AnyObject) as? UIImage {
+			self.image = cachedImage
+			handler(true)
+		} else {
+			self.request = Alamofire.request(url).validate().responseData(completionHandler: { (data) in
+				if let image = UIImage(data: data.data!, scale: UIScreen.main.scale) {
+					ImageCache.sharedInstance.setObject(image, forKey: url as AnyObject)
+					self.image = image
+					handler(true)
+				} else {
+					handler(false)
+				}
+				
+			})
+		}
+	}
+
 }

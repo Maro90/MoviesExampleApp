@@ -96,9 +96,25 @@
                     <view key="view" contentMode="scaleToFill" id="l21-yh-pWM">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="eLG-4y-Z6L">
+                                <rect key="frame" x="60" y="36" width="255" height="382.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="eLG-4y-Z6L" secondAttribute="height" multiplier="100:150" id="TxY-K7-onS"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" red="0.80784314869999996" green="0.45537524277277774" blue="0.15245226691111111" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="2VN-qZ-xNq" firstAttribute="trailing" secondItem="eLG-4y-Z6L" secondAttribute="trailing" constant="60" id="04K-B6-IHm"/>
+                            <constraint firstItem="eLG-4y-Z6L" firstAttribute="leading" secondItem="2VN-qZ-xNq" secondAttribute="leading" constant="60" id="82P-vF-Zpf"/>
+                            <constraint firstItem="eLG-4y-Z6L" firstAttribute="top" secondItem="2VN-qZ-xNq" secondAttribute="top" constant="16" id="Ddb-9p-lAt"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="2VN-qZ-xNq"/>
                     </view>
+                    <connections>
+                        <outlet property="image" destination="eLG-4y-Z6L" id="lOn-At-Zrx"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2no-Vh-pJV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import TDImageColors
 
 class ProgramDetailViewController: UIViewController {
 
@@ -19,7 +20,13 @@ class ProgramDetailViewController: UIViewController {
 
 		self.title = program.name
 		if let imageURL = program.posterPath{
-			image.imageURL(MoviesService().imageURL(path: imageURL), placeholder: #imageLiteral(resourceName: "moviePlaceholder"))
+			image.imageURL(MoviesService().imageURL(path: imageURL), placeholder: #imageLiteral(resourceName: "moviePlaceholder"), handler: { (success) in
+				let colorArray = TDImageColors(image: self.image.image, count: 1)
+				guard let color = colorArray?.colors[0] as? UIColor else{
+					return
+				}
+				self.view.backgroundColor = color
+			})
 		}else{
 			image.image = #imageLiteral(resourceName: "moviePlaceholder")
 		}

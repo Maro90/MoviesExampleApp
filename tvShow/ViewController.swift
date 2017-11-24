@@ -12,7 +12,6 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
 	@IBOutlet weak var tvShowCollectionView: UICollectionView!
 	
 	var list = [TVShow]()
-	var programSelected : TVShow!
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -24,6 +23,10 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
 		}) { (error) in
 			
 		}
+		
+		let searchButton = UIBarButtonItem(barButtonSystemItem: .search, target: self, action: #selector(self.searchTitles))
+		
+		self.navigationItem.rightBarButtonItem = searchButton
 		
 		
 	}
@@ -43,12 +46,11 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
 	func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 		let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "tvShowCell", for: indexPath) as! TVShowCollectionViewCell
 		
+		cell.clearCell()
+		
 		// Configure the cell
 		let program = self.list[indexPath.row]
-		
-		if let imageURL = program.posterPath{
-			cell.tvShowImage.imageURL(MoviesService().imageURL(path: imageURL))
-		}
+		cell.loadProgram(program: program)
 		
 		return cell
 	}
@@ -56,13 +58,20 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
 	
 	func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
 		
-		self.programSelected = self.list[indexPath.row]
+		let programSelected = self.list[indexPath.row]
 		
 		let viewController = self.storyboard!.instantiateViewController(withIdentifier: "ProgramDetail") as! ProgramDetailViewController
 		viewController.program = programSelected
 
 		self.navigationController?.pushViewController(viewController, animated: true)
 		
+	}
+	
+	
+	@objc func searchTitles() {
+		let viewController = self.storyboard!.instantiateViewController(withIdentifier: "SearchViewController") as! SearchViewController
+		self.navigationController?.pushViewController(viewController, animated: true)
+
 	}
 }
 

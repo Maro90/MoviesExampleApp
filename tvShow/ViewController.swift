@@ -17,7 +17,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
 		super.viewDidLoad()
 		// Do any additional setup after loading the view, typically from a nib.
 		
-		MoviesService().search(query: "Breaking", success: { (response) in
+		MoviesService().search(query: "A", success: { (response) in
 			self.list = response.results
 			self.tvShowCollectionView.reloadData()
 		}) { (error) in
